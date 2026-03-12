@@ -673,6 +673,7 @@ h1 {
     box-shadow: -14px 0 30px rgba(18, 31, 25, 0.18);
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    overscroll-behavior: contain;
     transform: translateX(100%);
     opacity: 0;
     pointer-events: none;
@@ -736,10 +737,15 @@ h1 {
   body.nav-open {
     overflow: hidden;
     height: 100%;
+    overscroll-behavior: none;
   }
 
   body.nav-open {
-    overscroll-behavior: none;
+    position: fixed;
+    top: var(--scroll-lock-top, 0);
+    left: 0;
+    right: 0;
+    width: 100%;
   }
 
   body.nav-open .site-nav {

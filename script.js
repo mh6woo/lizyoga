@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageField = document.getElementById("message");
   const year = document.getElementById("year");
   let currentCaptchaAnswer = 0;
+  let lockedScrollY = 0;
 
   const courseLabels = {
     collectif: "Cours collectif",
@@ -55,12 +56,28 @@ document.addEventListener("DOMContentLoaded", () => {
     year.textContent = String(new Date().getFullYear());
   }
 
+  const openNav = () => {
+    lockedScrollY = window.scrollY || window.pageYOffset || 0;
+    document.body.style.setProperty("--scroll-lock-top", `-${lockedScrollY}px`);
+    document.body.classList.add("nav-open");
+    document.documentElement.classList.add("nav-open");
+    if (navToggle) {
+      navToggle.setAttribute("aria-expanded", "true");
+      navToggle.setAttribute("aria-label", "Fermer le menu");
+    }
+  };
+
   const closeNav = () => {
+    const hasNavOpen = document.body.classList.contains("nav-open");
     document.body.classList.remove("nav-open");
     document.documentElement.classList.remove("nav-open");
+    document.body.style.removeProperty("--scroll-lock-top");
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Ouvrir le menu");
+    }
+    if (hasNavOpen) {
+      window.scrollTo(0, lockedScrollY);
     }
   };
 
@@ -73,10 +90,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      document.body.classList.add("nav-open");
-      document.documentElement.classList.add("nav-open");
-      navToggle.setAttribute("aria-expanded", "true");
-      navToggle.setAttribute("aria-label", "Fermer le menu");
+      openNav();
     });
 
     navOverlay.addEventListener("click", closeNav);
@@ -107,6 +121,12 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       { passive: false }
     );
+
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 640) {
+        closeNav();
+      }
+    });
   }
 
   if (refreshCaptcha) {
