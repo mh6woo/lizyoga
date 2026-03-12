@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const closeNav = () => {
     const wasOpen = document.body.classList.contains("nav-open");
     document.body.classList.remove("nav-open");
+    document.documentElement.classList.remove("nav-open");
     document.body.style.top = "";
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", "false");
@@ -81,6 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
       lockedScrollY = window.scrollY;
       document.body.style.top = `-${lockedScrollY}px`;
       document.body.classList.add("nav-open");
+      document.documentElement.classList.add("nav-open");
       navToggle.setAttribute("aria-expanded", "true");
       navToggle.setAttribute("aria-label", "Fermer le menu");
     });

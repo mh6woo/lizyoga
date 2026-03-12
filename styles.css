@@ -731,9 +731,16 @@ h1 {
     border-bottom: 1px solid rgba(33, 49, 42, 0.08);
   }
 
+  html.nav-open,
   body.nav-open {
     overflow: hidden;
+    height: 100%;
+  }
+
+  body.nav-open {
     position: fixed;
+    left: 0;
+    right: 0;
     width: 100%;
   }
 
