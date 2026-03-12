@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liz'Yoga | Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Liz'Yoga</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-controls="siteNav"
+          aria-expanded="false"
+        >
+          <span class="icon-menu" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Navigation principale">
+          <button class="nav-close" id="navClose" type="button" aria-label="Fermer le menu">
+            <span class="icon-close" aria-hidden="true"></span>
+          </button>
+          <a href="announcements.html">Annonces</a>
+          <a href="coaching.html">Cours</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+      <section class="hero container animate-rise">
+        <p class="kicker">Contact</p>
+        <h1>Ecrivons-nous</h1>
+        <p class="lead">Partagez vos envies de pratique et nous vous repondrons avec attention.</p>
+      </section>
+
+      <section class="container section animate-rise">
+        <div class="contact-card">
+          <form id="contactForm" class="contact-form" action="#" method="post">
+            <fieldset class="form-section request-type" aria-label="Type de demande">
+              <legend>Votre demande</legend>
+              <div class="request-options">
+                <label class="request-option" for="requestInfo">
+                  <input
+                    id="requestInfo"
+                    type="radio"
+                    name="requestType"
+                    value="information"
+                    checked
+                  />
+                  <span>Mieux me renseigner</span>
+                </label>
+                <label class="request-option" for="requestBooking">
+                  <input
+                    id="requestBooking"
+                    type="radio"
+                    name="requestType"
+                    value="reservation"
+                  />
+                  <span>Reserver un cours</span>
+                </label>
+              </div>
+            </fieldset>
+
+            <label for="name">Nom</label>
+            <input id="name" name="name" type="text" placeholder="Votre nom" required />
+
+            <label for="email">Email</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="vous@exemple.com"
+              required
+            />
+
+            <div id="courseTypeWrapper" style="display:none;">
+              <label for="courseType">Cours qui vous appelle</label>
+              <select id="courseType" name="courseType">
+                <option value="">Choisir un cours</option>
+                <option value="collectif">Cours collectif (1500 euros)</option>
+                <option value="personnalise">Cours personnalise (3000 euros)</option>
+              </select>
+              <p id="courseHint" class="course-hint" aria-live="polite"></p>
+            </div>
+
+            <label for="yogaLevel">Niveau de yoga</label>
+            <select id="yogaLevel" name="yogaLevel" required>
+              <option value="debutant">Debutant</option>
+              <option value="intermediaire">Intermediaire</option>
+              <option value="avance">Avance</option>
+            </select>
+
+            <label for="message">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Dites-nous ce que vous ressentez, ce que vous cherchez, et comment nous pouvons vous accompagner..."
+              required
+            ></textarea>
+
+            <div class="captcha-wrap">
+              <p class="captcha-question" id="captchaQuestion" aria-live="polite"></p>
+              <div class="captcha-row">
+                <input
+                  id="captchaInput"
+                  name="captcha"
+                  type="number"
+                  inputmode="numeric"
+                  placeholder="Reponse"
+                  required
+                />
+                <button id="refreshCaptcha" class="button button-ghost" type="button">
+                  Changer le captcha
+                </button>
+              </div>
+            </div>
+
+            <button class="button" type="submit">Envoyer mon message</button>
+            <p id="formMessage" class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>Liz'Yoga</p>
+        <p>©<span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

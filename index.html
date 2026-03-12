@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liz'Yoga | Accueil</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Liz'Yoga</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-controls="siteNav"
+          aria-expanded="false"
+        >
+          <span class="icon-menu" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Navigation principale">
+          <button class="nav-close" id="navClose" type="button" aria-label="Fermer le menu">
+            <span class="icon-close" aria-hidden="true"></span>
+          </button>
+          <a href="announcements.html">Annonces</a>
+          <a href="coaching.html">Cours</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+      <section class="hero container animate-rise" id="home">
+        <p class="kicker">Accueil</p>
+        <h1>Bienvenue dans l'univers Liz'Yoga.</h1>
+        <p class="lead">
+          Un espace pour respirer, retrouver de l'elan et avancer a votre rythme,
+          en douceur.
+        </p>
+        <div class="hero-actions">
+          <a class="button" href="announcements.html">Voir les actualites</a>
+          <a class="button button-ghost" href="contact.html">Nous ecrire</a>
+        </div>
+      </section>
+
+      <section class="container section animate-rise">
+        <div class="section-head">
+          <h2>Explorer le site</h2>
+          <p class="section-note">Choisissez votre porte d'entree et laissez-vous guider.</p>
+        </div>
+        <div class="announcement-grid">
+          <article class="info-card">
+            <p class="meta">A la une</p>
+            <h3>Annonces</h3>
+            <p>Retraites, rendez-vous et moments forts a venir.</p>
+            <p><a class="button" href="announcements.html">Ouvrir les annonces</a></p>
+          </article>
+          <article class="info-card">
+            <p class="meta">Pratique accompagnee</p>
+            <h3>Cours collectifs et perso</h3>
+            <p>En groupe ou en individuel, trouvez le format qui vous correspond.</p>
+            <p><a class="button" href="coaching.html">Voir les cours</a></p>
+          </article>
+          <article class="info-card">
+            <p class="meta">Parlons-en</p>
+            <h3>Contact</h3>
+            <p>Partagez vos envies, vos questions et votre rythme.</p>
+            <p><a class="button" href="contact.html">Ouvrir le formulaire</a></p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>Liz'Yoga</p>
+        <p>©<span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

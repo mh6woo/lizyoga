@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liz'Yoga | Cours</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Liz'Yoga</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-controls="siteNav"
+          aria-expanded="false"
+        >
+          <span class="icon-menu" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Navigation principale">
+          <button class="nav-close" id="navClose" type="button" aria-label="Fermer le menu">
+            <span class="icon-close" aria-hidden="true"></span>
+          </button>
+          <a href="announcements.html">Annonces</a>
+          <a href="coaching.html">Cours</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+      <section class="hero container animate-rise">
+        <p class="kicker">Cours</p>
+        <h1>Des cours pour soutenir votre chemin.</h1>
+        <p class="lead">Collectif ou personnalise, avancez avec presence et confiance.</p>
+      </section>
+
+      <section class="container section animate-rise">
+        <div class="offer-grid">
+          <article class="offer-card">
+            <h3>Cours collectif</h3>
+            <p class="price">1500 euros</p>
+            <dl class="info-list" aria-label="Informations du cours collectif">
+              <div class="info-item">
+                <dt>Places restantes</dt>
+                <dd>15/15</dd>
+              </div>
+              <div class="info-item">
+                <dt>Date</dt>
+                <dd>Vendredi 6 juin 2026 a 19h</dd>
+              </div>
+              <div class="info-item">
+                <dt>Duree</dt>
+                <dd>2h</dd>
+              </div>
+            </dl>
+            <ul>
+              <li>Pratique en petit groupe</li>
+              <li>Guidance attentive pendant la seance</li>
+              <li>Cadre chaleureux et bienveillant</li>
+            </ul>
+            <p class="course-cta-wrap">
+              <a class="button" href="contact.html?cours=collectif">Contacter pour ce cours</a>
+            </p>
+          </article>
+          <article class="offer-card featured-offer">
+            <p class="badge">Cours perso</p>
+            <h3>Cours personnalise</h3>
+            <p class="price">3000 euros</p>
+            <dl class="info-list" aria-label="Informations du cours personnalise">
+              <div class="info-item">
+                <dt>Format</dt>
+                <dd>1:1</dd>
+              </div>
+              <div class="info-item">
+                <dt>Tarif</dt>
+                <dd>3000 euros</dd>
+              </div>
+              <div class="info-item">
+                <dt>Planification</dt>
+                <dd>Sur rendez-vous</dd>
+              </div>
+            </dl>
+            <ul>
+              <li>Accompagnement 1:1 selon votre energie du moment</li>
+              <li>Progression construite avec vous</li>
+              <li>Rythme et creneau choisis ensemble</li>
+            </ul>
+            <p class="course-cta-wrap">
+              <a class="button" href="contact.html?cours=personnalise">Contacter pour ce cours</a>
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>Liz'Yoga</p>
+        <p>©<span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liz'Yoga | Annonces</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="index.html">Liz'Yoga</a>
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Ouvrir le menu"
+          aria-controls="siteNav"
+          aria-expanded="false"
+        >
+          <span class="icon-menu" aria-hidden="true"></span>
+        </button>
+        <nav class="site-nav" id="siteNav" aria-label="Navigation principale">
+          <button class="nav-close" id="navClose" type="button" aria-label="Fermer le menu">
+            <span class="icon-close" aria-hidden="true"></span>
+          </button>
+          <a href="announcements.html">Annonces</a>
+          <a href="coaching.html">Cours</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <main>
+      <section class="hero container animate-rise">
+        <p class="kicker">Annonces</p>
+        <h1>Nouvelles et rendez-vous a venir</h1>
+        <p class="lead">Un fil vivant pour suivre les prochaines experiences Liz'Yoga.</p>
+      </section>
+
+      <section class="container section section-annonces animate-rise">
+        <div class="announcement-grid announcement-grid-double">
+          <article class="info-card info-card-wide retreat-card">
+            <div class="retreat-illustration" aria-hidden="true">
+              <span class="mountain mountain-back"></span>
+              <span class="mountain mountain-front"></span>
+              <span class="sun"></span>
+              <span class="river"></span>
+            </div>
+            <p class="meta">Juin 2026</p>
+            <h3>Retraite yoga dans les Ardennes</h3>
+            <p>
+              Un week-end pour ralentir, respirer et bouger au rythme de la nature.
+              Une parenthese simple, humaine et ressourcante.
+            </p>
+            <dl class="info-list" aria-label="Informations retraite Ardennes">
+              <div class="info-item">
+                <dt>Lieu</dt>
+                <dd>Ardennes</dd>
+              </div>
+              <div class="info-item">
+                <dt>Date</dt>
+                <dd>Juin 2026</dd>
+              </div>
+              <div class="info-item">
+                <dt>Format</dt>
+                <dd>Retraite en petit groupe</dd>
+              </div>
+            </dl>
+          </article>
+
+          <article class="info-card info-card-wide retreat-card">
+            <div class="retreat-illustration retreat-illustration-tibet" aria-hidden="true">
+              <span class="mountain mountain-back"></span>
+              <span class="mountain mountain-front"></span>
+              <span class="sun"></span>
+              <span class="river"></span>
+            </div>
+            <p class="meta">Decembre 2026</p>
+            <h3>Retraite yoga au Tibet</h3>
+            <p>
+              Une retraite de fin d'annee tournee vers le souffle, l'ancrage et le
+              silence interieur, dans un cadre puissant et apaisant.
+            </p>
+            <dl class="info-list" aria-label="Informations retraite Tibet">
+              <div class="info-item">
+                <dt>Lieu</dt>
+                <dd>Tibet</dd>
+              </div>
+              <div class="info-item">
+                <dt>Date</dt>
+                <dd>Decembre 2026</dd>
+              </div>
+              <div class="info-item">
+                <dt>Format</dt>
+                <dd>Retraite immersive</dd>
+              </div>
+            </dl>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-wrap">
+        <p>Liz'Yoga</p>
+        <p>©<span id="year"></span></p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
