@@ -670,8 +670,12 @@ h1 {
     background: rgba(255, 253, 249, 0.98);
     border-left: 1px solid var(--line);
     box-shadow: -14px 0 30px rgba(18, 31, 25, 0.18);
-    transform: translateX(101%);
-    transition: transform 0.24s ease;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transform: translateX(100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.24s ease, opacity 0.2s ease;
     z-index: 70;
   }
 
@@ -729,10 +733,14 @@ h1 {
 
   body.nav-open {
     overflow: hidden;
+    position: fixed;
+    width: 100%;
   }
 
   body.nav-open .site-nav {
     transform: translateX(0);
+    opacity: 1;
+    pointer-events: auto;
   }
 
   body.nav-open .nav-overlay {

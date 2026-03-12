@@ -14,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageField = document.getElementById("message");
   const year = document.getElementById("year");
   let currentCaptchaAnswer = 0;
+  let lockedScrollY = 0;
 
   const courseLabels = {
     collectif: "Cours collectif",
@@ -56,18 +57,32 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const closeNav = () => {
+    const wasOpen = document.body.classList.contains("nav-open");
     document.body.classList.remove("nav-open");
+    document.body.style.top = "";
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Ouvrir le menu");
+    }
+    if (wasOpen) {
+      window.scrollTo(0, lockedScrollY);
     }
   };
 
   if (navToggle && siteNav && navOverlay) {
     navToggle.addEventListener("click", () => {
-      const isOpen = document.body.classList.toggle("nav-open");
-      navToggle.setAttribute("aria-expanded", String(isOpen));
-      navToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+      const isOpen = document.body.classList.contains("nav-open");
+
+      if (isOpen) {
+        closeNav();
+        return;
+      }
+
+      lockedScrollY = window.scrollY;
+      document.body.style.top = `-${lockedScrollY}px`;
+      document.body.classList.add("nav-open");
+      navToggle.setAttribute("aria-expanded", "true");
+      navToggle.setAttribute("aria-label", "Fermer le menu");
     });
 
     navOverlay.addEventListener("click", closeNav);
