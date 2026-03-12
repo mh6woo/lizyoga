@@ -68,9 +68,15 @@ body::after {
   position: sticky;
   top: 0;
   z-index: 60;
-  backdrop-filter: blur(8px);
   background: rgba(247, 244, 236, 0.8);
   border-bottom: 1px solid rgba(33, 49, 42, 0.08);
+}
+
+@media (min-width: 641px) {
+  .site-header {
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
 }
 
 .nav-wrap {
@@ -736,16 +742,7 @@ h1 {
   html.nav-open,
   body.nav-open {
     overflow: hidden;
-    height: 100%;
     overscroll-behavior: none;
-  }
-
-  body.nav-open {
-    position: fixed;
-    top: var(--scroll-lock-top, 0);
-    left: 0;
-    right: 0;
-    width: 100%;
   }
 
   body.nav-open .site-nav {
