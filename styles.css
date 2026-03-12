@@ -738,10 +738,7 @@ h1 {
   }
 
   body.nav-open {
-    position: fixed;
-    left: 0;
-    right: 0;
-    width: 100%;
+    overscroll-behavior: none;
   }
 
   body.nav-open .site-nav {

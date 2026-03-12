@@ -14,7 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const messageField = document.getElementById("message");
   const year = document.getElementById("year");
   let currentCaptchaAnswer = 0;
-  let lockedScrollY = 0;
 
   const courseLabels = {
     collectif: "Cours collectif",
@@ -57,16 +56,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const closeNav = () => {
-    const wasOpen = document.body.classList.contains("nav-open");
     document.body.classList.remove("nav-open");
     document.documentElement.classList.remove("nav-open");
-    document.body.style.top = "";
     if (navToggle) {
       navToggle.setAttribute("aria-expanded", "false");
       navToggle.setAttribute("aria-label", "Ouvrir le menu");
-    }
-    if (wasOpen) {
-      window.scrollTo(0, lockedScrollY);
     }
   };
 
@@ -79,8 +73,6 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      lockedScrollY = window.scrollY;
-      document.body.style.top = `-${lockedScrollY}px`;
       document.body.classList.add("nav-open");
       document.documentElement.classList.add("nav-open");
       navToggle.setAttribute("aria-expanded", "true");
@@ -100,6 +92,21 @@ document.addEventListener("DOMContentLoaded", () => {
         closeNav();
       }
     });
+
+    // Prevent background page scroll on touch devices while keeping drawer scrollable.
+    document.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!document.body.classList.contains("nav-open")) {
+          return;
+        }
+        if (siteNav.contains(event.target)) {
+          return;
+        }
+        event.preventDefault();
+      },
+      { passive: false }
+    );
   }
 
   if (refreshCaptcha) {
