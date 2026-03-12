@@ -15,6 +15,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const year = document.getElementById("year");
   let currentCaptchaAnswer = 0;
 
+  const updateNavViewportHeight = () => {
+    const viewportHeight = window.visualViewport ? window.visualViewport.height : window.innerHeight;
+    document.documentElement.style.setProperty("--nav-viewport-height", `${viewportHeight}px`);
+  };
+
   const courseLabels = {
     collectif: "Cours collectif",
     personnalise: "Cours personnalise",
@@ -53,6 +58,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (year) {
     year.textContent = String(new Date().getFullYear());
+  }
+
+  updateNavViewportHeight();
+  window.addEventListener("resize", updateNavViewportHeight);
+  window.addEventListener("orientationchange", updateNavViewportHeight);
+  if (window.visualViewport) {
+    window.visualViewport.addEventListener("resize", updateNavViewportHeight);
   }
 
   const openNav = () => {

@@ -669,7 +669,8 @@ h1 {
     top: 0;
     right: 0;
     width: min(82vw, 320px);
-    height: 100dvh;
+    height: var(--nav-viewport-height, 100vh);
+    max-height: var(--nav-viewport-height, 100vh);
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
@@ -749,6 +750,13 @@ h1 {
     transform: translateX(0);
     opacity: 1;
     pointer-events: auto;
+  }
+
+  body.nav-open .site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
   }
 
   body.nav-open .nav-overlay {
